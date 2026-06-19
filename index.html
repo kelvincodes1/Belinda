@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Belinda! 🎂</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         ENTRY SCREEN
+         ========================================== -->
+    <div id="entry-screen">
+        <div id="entry-particles"></div>
+        <div class="entry-content">
+            <div class="entry-sparkle">✦</div>
+            <p id="typing-text" class="typing-text"></p>
+            <span id="typing-cursor" class="typing-cursor">|</span>
+            <div id="ready-section" class="ready-section">
+                <p class="ready-question">Are you ready?</p>
+                <div class="button-row">
+                    <button id="yes-btn" class="entry-btn yes-btn">YES</button>
+                    <button id="no-btn" class="entry-btn no-btn">NO</button>
+                </div>
+                <p id="no-message" class="no-message"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         MAIN PAGE
+         ========================================== -->
+    <div id="main-page">
+
+        <!-- Fireworks Canvas (behind all content) -->
+        <canvas id="fireworks-canvas"></canvas>
+
+        <!-- Birthday Header -->
+        <div class="birthday-header">
+            <h1 class="birthday-title">Happy Birthday Belinda! 🎂</h1>
+            <p class="birthday-subtitle">Wishing you all the joy, love, and magic you deserve</p>
+        </div>
+
+        <!-- Cake Section -->
+        <section class="section cake-section">
+            <div class="cake-wrapper" id="cake-wrapper">
+                <div class="cake" id="cake">
+                    <!-- Candles Row (Click to blow out!) -->
+                    <div class="candles-row" id="candles-row">
+                        <div class="candle" style="background: linear-gradient(to bottom, #f8bbd0, #f48fb1);">
+                            <div class="flame"><div class="flame-inner"></div></div>
+                        </div>
+                        <div class="candle" style="background: linear-gradient(to bottom, #e1bee7, #ce93d8);">
+                            <div class="flame"><div class="flame-inner"></div></div>
+                        </div>
+                        <div class="candle" style="background: linear-gradient(to bottom, #b2dfdb, #80cbc4);">
+                            <div class="flame"><div class="flame-inner"></div></div>
+                        </div>
+                        <div class="candle" style="background: linear-gradient(to bottom, #ffe0b2, #ffcc80);">
+                            <div class="flame"><div class="flame-inner"></div></div>
+                        </div>
+                        <div class="candle" style="background: linear-gradient(to bottom, #f8bbd0, #f48fb1);">
+                            <div class="flame"><div class="flame-inner"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- Top Layer -->
+                    <div class="cake-layer layer-top">
+                        <div class="frosting">
+                            <div class="drip" style="left:12%; height:13px;"></div>
+                            <div class="drip" style="left:48%; height:19px;"></div>
+                            <div class="drip" style="left:78%; height:11px;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Middle Layer -->
+                    <div class="cake-layer layer-middle">
+                        <div class="frosting">
+                            <div class="drip" style="left:8%; height:16px;"></div>
+                            <div class="drip" style="left:28%; height:11px;"></div>
+                            <div class="drip" style="left:52%; height:20px;"></div>
+                            <div class="drip" style="left:76%; height:14px;"></div>
+                            <div class="drip" style="left:92%; height:10px;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Layer -->
+                    <div class="cake-layer layer-bottom">
+                        <div class="frosting">
+                            <div class="drip" style="left:5%; height:15px;"></div>
+                            <div class="drip" style="left:20%; height:21px;"></div>
+                            <div class="drip" style="left:38%; height:13px;"></div>
+                            <div class="drip" style="left:55%; height:18px;"></div>
+                            <div class="drip" style="left:72%; height:22px;"></div>
+                            <div class="drip" style="left:88%; height:14px;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Plate -->
+                    <div class="plate"></div>
+                </div>
+                <p class=\"cake-hint\">✨ Tap the cake to hear your song! 🎂 Click the candles to blow them out! 🕯️ ✨</p>
+            </div>
+        </section>
+
+        <!-- Birthday Wish Section -->
+        <section class="section wish-section">
+            <div class="wish-card">
+                <p id="wish-text" class="wish-text"></p>
+                <span id="wish-cursor" class="typing-cursor" style="display:none;">|</span>
+            </div>
+            <div class="wish-decoration">🌸 💕 🌸</div>
+        </section>
+
+        <!-- Interactive Features Section -->
+        <section class="section interactive-section">
+            <h2 class="section-title">Make Some Magic</h2>
+            <div class="magic-buttons">
+                <button class="magic-btn" id="hearts-btn">
+                    <span class="magic-btn-icon">💕</span>
+                    <span class="magic-btn-label">Send Love</span>
+                </button>
+                <button class="magic-btn" id="confetti-btn">
+                    <span class="magic-btn-icon">🎊</span>
+                    <span class="magic-btn-label">Pop Confetti</span>
+                </button>
+                <button class="magic-btn" id="sparkle-btn">
+                    <span class="magic-btn-icon">✨</span>
+                    <span class="magic-btn-label">Sparkle</span>
+                </button>
+                <button class="magic-btn" id="color-btn">
+                    <span class="magic-btn-icon">🎨</span>
+                    <span class="magic-btn-label">Color Magic</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Section -->
+        <section class="section gallery-section">
+            <h2 class="section-title">Beautiful Memories</h2>
+            <div class="gallery-grid">
+
+                <!-- ============================================
+                     REPLACE EACH img src WITH BELINDA'S PHOTOS
+                     Example: src="photos/belinda-1.jpg"
+                     Keep the class and alt attributes unchanged
+                     ============================================ -->
+                <div class="gallery-item" data-index="0">
+                    <img src="5.jpeg" alt="Belinda Photo 1">
+                    <div class="gallery-overlay"><span>🌸</span></div>
+                </div>
+                <div class="gallery-item" data-index="1">
+                    <img src="4.jpeg" alt="Belinda Photo 2">
+                    <div class="gallery-overlay"><span>💕</span></div>
+                </div>
+                <div class="gallery-item" data-index="2">
+                    <img src="3.jpeg" alt="Belinda Photo 3">
+                    <div class="gallery-overlay"><span>✨</span></div>
+                </div>
+                <div class="gallery-item" data-index="3">
+                    <img src="2.jpeg" alt="Belinda Photo 4">
+                    <div class="gallery-overlay"><span>🌸</span></div>
+                </div>
+                <div class="gallery-item" data-index="4">
+                    <img src="1.jpeg" alt="Belinda Photo 5">
+                    <div class="gallery-overlay"><span>💖</span></div>
+                </div>
+                <div class="gallery-item" data-index="5">
+                    <img src="6.jpeg" alt="Belinda Photo 6">
+                    <div class="gallery-overlay"><span>🎁</span></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox">
+            <button id="lightbox-close" class="lightbox-close" aria-label="Close">&times;</button>
+            <button id="lightbox-prev" class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>
+            <button id="lightbox-next" class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button>
+            <img id="lightbox-img" class="lightbox-img" src="" alt="Gallery Photo">
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">Made with 💕 for the most amazing Belinda</p>
+            <p class="footer-sub">Happy Birthday! 🎂</p>
+        </footer>
+    </div>
+
+    <!-- ============================================
+         CUSTOM AUDIO FILE INSTRUCTIONS
+         ============================================
+         Place your birthday song audio file (e.g. birthday-song.mp3)
+         in the same directory as this HTML file, then update
+         the audio path inside script.js (look for "CUSTOM AUDIO").
+         Supported formats: .mp3, .wav, .ogg
+         ============================================ -->
+
+    <script src="script.js"></script>
+</body>
+</html>
